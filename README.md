@@ -187,6 +187,8 @@ background_ind = np.where((1 - mask) == 1)
 directions = get_direction(J, None, foreground_ind, background_ind)
 ```
 
+The coordinates are provided by authors of [LowRankGAN](https://github.com/zhujiapeng/resefa/blob/main/coordinate.py).
+
 ### Performing Mutations
 
 Once you get the mutating directions, you can perform mutations in the following way.

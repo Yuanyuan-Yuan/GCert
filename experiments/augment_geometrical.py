@@ -25,7 +25,7 @@ os.makedirs('images', exist_ok=True)
 os.makedirs('ckpt', exist_ok=True)
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--exp_name', type=str, default=None, help='experiment name')
+parser.add_argument('--exp_name', type=str, default='test', help='experiment name')
 parser.add_argument('--cls', type=int, default=0, help='selected class')
 parser.add_argument('--n_epochs', type=int, default=500, help='number of epochs of training')
 parser.add_argument('--batch_size', type=int, default=512, help='size of the batches')

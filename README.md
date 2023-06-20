@@ -300,3 +300,32 @@ class Fog(Weather):
 - `experiments/rectangle.py` - This script implements how to calculate the minimal enclosing rectangle for assessing the geometrical properties.
 
 - `experiments/synthetic_data.py` - This script implements the synthetic dataset of our ablation study. You can directly use the `SyntheticDataset` class as one Pytorch dataset class.
+
+## Acknowledgement
+
+We sincerely thank authors of the following projects for open-sourcing their code, which greatly help us develop GCert.
+
+- GenProver/DiffAI: https://github.com/eth-sri/diffai
+
+- AI2/ERAN: https://github.com/eth-sri/eran
+
+- VeriGauge: https://github.com/AI-secure/VeriGauge
+
+- ExactLine: https://github.com/95616ARG/SyReNN
+
+- LowRankGAN: https://github.com/zhujiapeng/LowRankGAN
+
+## Citation
+
+If GCert is helpful for your research, please consider cite our work as follow:
+
+```bib
+@inproceedings{yuan2023precise,
+  title={Precise and Generalized Robustness Certification for Neural Networks},
+  author={Yuan, Yuanyuan and Wang, Shuai and Su, Zhendong},
+  booktitle={32nd USENIX Security Symposium (USENIX Security 23)},
+  year={2023}
+}
+```
+
+If you have any questions, feel free to contact Yuanyuan (yyuanaq@cse.ust.hk).

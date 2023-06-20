@@ -4,7 +4,7 @@ This folder provides implementations and examples of regulating generative model
 
 ## Continuity
 
-To enforce the continuity, you need to add an extra training objective. Below, we show how to train a conventional GAN with regulation of continuity.
+To enforce the continuity, you need to add an extra training objective. See more details in `implementation/continuity.py`. Below, we show how to train a conventional GAN with regulation of continuity.
 
 ```python
 def continuity(generator):

@@ -6,11 +6,11 @@ This folder provides scripts for our evaluations.
 
 - `dataset.py` - We implement two Pytorch Dataset classes for CelebA. `CelebARecog` is used for training face recognition models. `CelebAGen` is employed for training face image generator.
 
-- `model.py` - We implement our models in this script. In accordance to requirements of GenProver/ExactLine, the implementations are carefully crafted. See details in [GenProver]().
+- `model.py` - We implement our models in this script. In accordance to requirements of GenProver/ExactLine, the implementations are carefully crafted. See details in [GenProver](https://github.com/Yuanyuan-Yuan/GCert/tree/main/frameworks/GenProver).
 
 - `face_recognition.py` - Our face recognition model takes a tuple of two images as one input and predicts whether the two faces are from the same person. This script implements how we train the face recognition model.
 
-See [data]() for how to download and process the datasets.
+See [data](https://github.com/Yuanyuan-Yuan/GCert/tree/main/data) for how to download and process the datasets.
 
 ## Mutations
 

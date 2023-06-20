@@ -1,4 +1,4 @@
-# AI$^2$/ERAN
+# AI2/ERAN
 
 The official implementation is provided [here](https://github.com/eth-sri/eran). In our experiments, we use the adaptor provided by [VeriGauge](https://github.com/AI-secure/VeriGauge) to set up AI$^2$/ERAN.
 

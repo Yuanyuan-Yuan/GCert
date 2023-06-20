@@ -27,4 +27,4 @@ generative models with continuity and independence. See detailed documents [here
 AI$^2$/Eran, GenProver, and ExactLine). This folder provides the scripts for configurations; see
 detailed documents [here](https://github.com/Yuanyuan-Yuan/GCert/tree/main/frameworks)
 
-- `data` - This folder provides scripts for data processing and shows examples of some data samples. See detailed documents [here](https://github.com/Yuanyuan-Yuan/GCert/tree/main/frameworks).
+- `data` - This folder provides scripts for data processing and shows examples of some data samples. See detailed documents [here](https://github.com/Yuanyuan-Yuan/GCert/tree/main/data).

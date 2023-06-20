@@ -52,7 +52,7 @@ The official implementation of GenProver is provided [here](https://openreview.n
 
 After downloading the code, you need to modify the following scripts in the projects:
 
-- `frameworks/GenProver/components.py` - GenProver is implemented based on [DiffAI](https://github.com/eth-sri/diffai) and `components.py` re-implements different Pytorch `nn` modules with `InferModule` of DiffAI. We modified the implementations of several modules (mostly the `BatchNorm` module) to better fit  the implementations in Pytorch. You can replace the original `components.py` with our provided one.
+- `frameworks/GenProver/components.py` - GenProver is implemented based on [DiffAI](https://github.com/eth-sri/diffai) and `components.py` re-implements different Pytorch `nn` modules with `InferModule` of DiffAI. We modified the implementations of several modules (mostly the `BatchNorm` module) to better fit the implementations in Pytorch. You can replace the original `components.py` with our provided one.
 
 - `frameworks/GenProver/genmodels.py` - We added implementations (with DiffAI modules) of our models in this script. You can replace the original `genmodels.py` with our provided one.
 
@@ -60,11 +60,11 @@ Note that in order to load models trained with Pytorch, you need to do the follo
 
 1. Implement the model following the examples given in `experiments/model.py`. We suggest implementing the model with `nn.Sequential()` and hard-coding the name for each `nn.Sequential()`.
 
-2. Implement every operation as a class inherited from Pytorch `nn` module. For example, the `torch.cat()` operation should be implement as `class CatTwo(nn.Module)`; see examples in `experiments/model.py`.
+2. Implement every operation as a class inherited from Pytorch `nn` module. For example, the `torch.cat()` operation should be implement as `class CatTwo(nn.Module)` in `experiments/model.py`; see examples in `experiments/model.py`.
 
-3. Implement the corresponding class following DiffAI in `components.py`. For example, for the `class CatTwo(nn.Module)` in `experiments/model.py`, you should implement a `class CatTwo(InferModule)` in `components.py`; more examples are given in `components.py`.
+3. Implement the corresponding class following DiffAI in `frameworks/GenProver/components.py`. For example, for the `class CatTwo(nn.Module)` in `experiments/model.py`, you should implement a `class CatTwo(InferModule)` in `components.py`; more examples are given in `components.py`.
 
-4. When loading the trained weights, you need to convert the key in `state_dict`. We provide the implementation and examples in `load_model.py`.
+4. When loading the trained weights, you need to convert the key in `state_dict`. We provide the implementation and examples in `frameworks/GenProver/load_model.py`.
 
 ### ExactLine
 
@@ -221,6 +221,7 @@ See [data](https://github.com/Yuanyuan-Yuan/GCert/tree/main/data) for how to dow
 #### Geometrical
 
 - `experiments/augment_geometrical.py` - This script shows how we augment the training data with different geometrical (affine) mutations. In brief, this is achieved by applying the mutation in runtime.
+
 Pytorch `transforms` module supports randomly applying affine mutations on each input, see implementation below.
 
 ```python
@@ -268,13 +269,13 @@ for epoch in range(num_epoch):
 
 #### Perceptual-Level
 
-For perceptual-level mutations, since they are extracted from the perception variations from natural images, you don not need to anything; just train a standard generative model. See `implementation/independence.py` for how to obtain perceptual-level mutations.
+For perceptual-level mutations, since they are extracted from the perception variations from natural images, you don not need to do anything; just train a standard generative model. See `implementation/independence.py` for how to obtain perceptual-level mutations.
 
 #### Stylized
 
 For stylized mutations, you need to train the generative model following the cycle-consistency (which is proposed in CycleGAN). The official Pytorch implementation of CycleGAN is provided [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). You can smoothly set up everything following the official documents.
 
-For different artistical styles, we the style files provided [here](https://github.com/rgeirhos/Stylized-ImageNet).
+For different artistical styles, we use the style files provided [here](https://github.com/rgeirhos/Stylized-ImageNet).
 
 For weather-filters, we use the simulated filters provided by [imgaug](https://github.com/aleju/imgaug). The implementations are given in `experiments/mutation.py`. Below is an example of the foggy mutation.
 
@@ -317,7 +318,7 @@ We sincerely thank authors of the following projects for open-sourcing their cod
 
 ## Citation
 
-If GCert is helpful for your research, please consider cite our work as follow:
+If GCert is helpful for your research, please consider cite our work as follows:
 
 ```bib
 @inproceedings{yuan2023precise,

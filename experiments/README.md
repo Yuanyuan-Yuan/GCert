@@ -17,6 +17,7 @@ See [data](https://github.com/Yuanyuan-Yuan/GCert/tree/main/data) for how to dow
 ### Geometrical
 
 - `augment_geometrical.py` - This script shows how we augment the training data with different geometrical (affine) mutations. In brief, this is achieved by applying the mutation in runtime.
+
 Pytorch `transforms` module supports randomly applying affine mutations on each input, see implementation below.
 
 ```python
@@ -70,7 +71,7 @@ For perceptual-level mutations, since they are extracted from the perception var
 
 For stylized mutations, you need to train the generative model following the cycle-consistency (which is proposed in CycleGAN). The official Pytorch implementation of CycleGAN is provided [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). You can smoothly set up everything following the official documents.
 
-For different artistical styles, we the style files provided [here](https://github.com/rgeirhos/Stylized-ImageNet).
+For different artistical styles, we use the style files provided [here](https://github.com/rgeirhos/Stylized-ImageNet).
 
 For weather-filters, we use the simulated filters provided by [imgaug](https://github.com/aleju/imgaug). The implementations are given in `mutation.py`. Below is an example of the foggy mutation.
 
